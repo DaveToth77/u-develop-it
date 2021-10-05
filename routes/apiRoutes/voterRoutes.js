@@ -4,7 +4,7 @@ const db = require('../../db/connection');
 const inputCheck = require('../../utils/inputCheck');
 
 router.get('/voters', (req, res) => {
-    const sql = `SELECT * FROM voters ORDER Y last_name`;
+    const sql = `SELECT * FROM voters ORDER BY last_name`;
 
     db.query(sql, (err, rows) => {
         if (err) {
@@ -120,4 +120,5 @@ router.delete('/voter/:id', (req, res) => {
         }
     });
 });
+
 module.exports = router;
